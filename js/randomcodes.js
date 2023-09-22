@@ -12,20 +12,9 @@ function generateCode() {
     return code;
 }
 
-function toggleSubmitButton() {
-    var input = document.getElementById('randomcodeInput');
-    var submitButton = document.getElementById('submit');
+document.getElementById("codes").innerHTML = generateCode();
 
-    if (input.value === generatedCode) {
-        submitButton.disabled = false;
-    } else {
-        submitButton.disabled = true;
-    }
+function disableButton() {
+    document.getElementById("submit").disabled = true;
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('codes').textContent = generatedCode;
-    toggleSubmitButton();
-
-    document.getElementById('randomcodeInput').addEventListener('input', toggleSubmitButton);
-});
+disableButton();
